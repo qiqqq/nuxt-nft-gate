@@ -8,8 +8,8 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-nft-gate',
     configKey: 'nftGate',
     compatibility: {
-      nuxt: '>=3.0.0'
-    }
+      nuxt: '>=3.0.0',
+    },
   },
   // Default configuration options of the Nuxt module
   defaults: {},
