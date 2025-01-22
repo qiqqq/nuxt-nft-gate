@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "nuxt-nft-gate",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Nuxt module that grants access to the content after confirming NFT ownership",
+  "repository": "https://github.com/qiqqq/nuxt-nft-gate",
   "license": "MIT",
   "type": "module",
   "exports": {
