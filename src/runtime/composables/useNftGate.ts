@@ -1,9 +1,10 @@
 import { ref } from 'vue'
 import { ethers } from 'ethers'
+import type { MetaMaskInpageProvider } from '@metamask/providers'
 
 declare global {
   interface Window {
-    ethereum: any
+    ethereum: MetaMaskInpageProvider
   }
 }
 
