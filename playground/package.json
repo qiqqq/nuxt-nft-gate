@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "my-module-playground",
+  "name": "nuxt-nft-gate-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",
