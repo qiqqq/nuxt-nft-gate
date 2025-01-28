@@ -15,7 +15,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup(_options, _nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     // Add composables
@@ -25,6 +25,11 @@ export default defineNuxtModule<ModuleOptions>({
     addComponentsDir({
       path: resolver.resolve('runtime/components'),
     })
+
+    // Expose module's options to runtime
+    nuxt.options.runtimeConfig.public.nftGate = {
+      nftAddress: options.nftAddress,
+    }
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))

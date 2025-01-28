@@ -9,6 +9,8 @@ declare global {
 }
 
 export default function useNftGate() {
+  const runtimeConfig = useRuntimeConfig()
+
   const isWalletConnected = ref(false)
   const isNftHolder = ref(false)
 
@@ -24,13 +26,14 @@ export default function useNftGate() {
 
       isWalletConnected.value = accounts.length > 0
 
-      const contractAddress = '0x3727aC93ED1FF0472eC91619CfaA011F76A5BAAe'
+      console.log(runtimeConfig.public.nftGate.nftAddress)
+
       const abi = [
         'function balanceOf(address owner) view returns (uint256)',
         'function ownerOf(uint256 tokenId) view returns (address)',
       ]
 
-      const contract = new ethers.Contract(contractAddress, abi, provider)
+      const contract = new ethers.Contract(runtimeConfig.public.nftGate.nftAddress, abi, provider)
       const balance = await contract.balanceOf(accounts[0])
 
       isNftHolder.value = balance > 0
